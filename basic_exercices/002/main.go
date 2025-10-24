@@ -3,8 +3,10 @@
 
 package main
 
-// import "fmt"
+import "fmt"
 
-func main () {
-	// Here goes your code
+func main() {
+	// I wont give my adress here as it is public repo
+	fmt.Print("I'm Mikołaj and i live in Gdańsk")
 }
+

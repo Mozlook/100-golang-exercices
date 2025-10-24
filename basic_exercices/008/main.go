@@ -4,7 +4,10 @@ package main
 
 import "fmt"
 
-func main () {
-	// Here goes your code
-	fmt.Printf("...")
+func main() {
+	arr := [5]string{"Golang", "Python"}
+	for i := 0; i < len(arr); i++ {
+		fmt.Printf("Element index %d %v \n", i, arr[i])
+	}
 }
+

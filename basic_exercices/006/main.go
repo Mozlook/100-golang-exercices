@@ -5,7 +5,13 @@ package main
 
 import "fmt"
 
-func main () {
+func main() {
 	// Here goes your code
-	fmt.Printf("...")
+	arrayInt8 := new([10]int)
+
+	for i := 0; i < len(arrayInt8); i++ {
+		arrayInt8[i] = i
+	}
+	fmt.Printf("%v", arrayInt8)
 }
+

@@ -2,6 +2,10 @@
 
 package main
 
+import "fmt"
+
 func main() {
-	// Here goes your code
+	helloWorld := "Hello World!"
+
+	fmt.Printf("%s", helloWorld)
 }
