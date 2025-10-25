@@ -4,15 +4,17 @@
 package main
 
 import (
+	"fmt"
 	"log"
-  	"fmt"
 	"os"
 )
 
 func main() {
-	data, err := os.ReadFile()
+	rawData, err := os.ReadFile("./read.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println()
+
+	var data string = string(rawData)
+	fmt.Println(data)
 }

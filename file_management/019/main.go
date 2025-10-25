@@ -5,10 +5,13 @@ package main
 
 import "os"
 
-
-func main () {
+func main() {
 	var src, dest string
 	src = "name1.txt"
 	// Here goes your code
 
+	dest = "name2.txt"
+
+	os.Rename(src, dest)
 }
+

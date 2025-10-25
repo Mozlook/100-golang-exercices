@@ -3,10 +3,17 @@
 
 package main
 
-import "fmt"
-import "os"
+import (
+	"fmt"
+	"log"
+	"os"
+)
 
-func main () {
-	// Here goes your code
-	
+func main() {
+	file, err := os.Stat("./READM.md")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Print(file)
 }
+

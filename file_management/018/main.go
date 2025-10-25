@@ -5,7 +5,10 @@ package main
 
 import "os"
 
-func main () {
+func main() {
 	// Here goes your code
-	
+	file, _ := os.Create("./something.md")
+
+	file.WriteString("Poland\nFrance\nSpain\nUSA\nNigeria")
 }
+
