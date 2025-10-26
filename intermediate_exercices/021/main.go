@@ -8,7 +8,9 @@ package main
 
 import "fmt"
 
-func main () {
+func main() {
 	// Your code goes here
-	
+	a := map[int]string{1: "A", 2: "B", 3: "C"}
+	fmt.Println(a)
 }
+

@@ -12,10 +12,18 @@ import "fmt"
 
 type Hotel struct {
 	// Your code goes here
-
+	numRooms   int32
+	streetName string
+	hasPool    bool
 }
 
-func main () {
+func main() {
 	var myHotel Hotel
 	// Your code goes here
+	myHotel.numRooms = 10
+	myHotel.streetName = "Grove street"
+	myHotel.hasPool = false
+
+	fmt.Println(myHotel)
 }
+

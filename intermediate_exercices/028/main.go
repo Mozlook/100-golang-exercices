@@ -8,16 +8,18 @@ package main
 import "fmt"
 
 func sum(x int, y int) int {
-	
+	return x + y
 }
 
 func secondSum(x, y, z int) int {
-	
+	return sum(x, y) + z
 }
 
-func main () {
+func main() {
 	var result int
 	// Your code goes here
+	result = secondSum(1, 2, 3)
 
 	fmt.Println(result)
 }
+

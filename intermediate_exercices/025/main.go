@@ -8,8 +8,11 @@ package main
 
 import "fmt"
 
-func main () {
-    var x int32 = 5
+func main() {
+	var x int32 = 5
 	// Your code goes here
-	
+	var p *int32 = &x
+
+	fmt.Println(p)
 }
+

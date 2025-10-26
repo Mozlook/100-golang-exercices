@@ -3,12 +3,16 @@
 package main
 
 import (
-    "fmt"
-    "math/rand"
-    "time"
+	"fmt"
+	"math/rand"
 )
 
-func main () {
-	// Your code goes here
-	
+func random(min int, max int) int {
+	return rand.Intn(max-min+1) + min
 }
+
+func main() {
+	randomNum := random(-50, +50)
+	fmt.Printf("Random number: %d\n", randomNum)
+}
+
