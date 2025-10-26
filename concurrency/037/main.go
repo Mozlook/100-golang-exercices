@@ -5,11 +5,22 @@
 // Sending data from that channel is prohibited / will cause compiler errors
 // Feed some string into that channel.
 
-
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
-func main () {
-	
+func receive(in <-chan string) {
+	msg := <-in
+	fmt.Print(msg)
 }
+
+func main() {
+	c := make(chan string)
+	go receive(c)
+	c <- "test"
+	time.Sleep(5 * time.Second)
+}
+

@@ -8,7 +8,15 @@ package main
 
 import "fmt"
 
-
-func main () {
-	
+func main() {
+	c := make(chan string, 2)
+	c <- "First message"
+	c <- "Second message"
+	close(c)
+	msg := <-c
+	fmt.Println(msg)
+	msg = <-c
+	fmt.Println(msg)
+	msg = <-c
+	fmt.Println(msg)
 }

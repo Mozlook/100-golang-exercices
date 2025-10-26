@@ -8,16 +8,25 @@
 
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
-func second(c chan int){
-	
+func second(c chan int, multiplier int) {
+	timer := 1
+	for {
+		c <- timer * multiplier
+		time.Sleep(1 * time.Second)
+		timer += multiplier
+	}
 }
 
-func main () {
+func main() {
 	var c chan int = make(chan int)
-	go second(c)
-	
-	
+	go second(c, 2)
+	go second(c, 3)
+	for value := range c {
+		fmt.Println(value)
+	}
 }

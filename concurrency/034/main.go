@@ -7,18 +7,29 @@
 
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
-
-func pop_message (c chan string){
-	msg := <- c
+func pop_message(c chan string) {
+	msg := <-c
 	fmt.Println(msg)
 }
-func main () {
-	// Your code goes here
 
+func main() {
+	// Your code goes here
+	ch := make(chan string, 4)
+	ch <- "First"
+	ch <- "Second"
+	ch <- "Third"
+	ch <- "Fourth"
+	pop_message(ch)
+	pop_message(ch)
+	pop_message(ch)
+	pop_message(ch)
 
 	// this sleep is in order to not exit the program sooner than the routine lifetime :)
 	time.Sleep(1 * time.Second)
 }
+

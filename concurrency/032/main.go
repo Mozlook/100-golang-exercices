@@ -4,11 +4,12 @@
 // Make a go routine of the counter() function
 // right after calling the go routine, in the next line. call the same routine with another different number
 
-
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 func counter(x int) {
 	for i := 0; i < x; i++ {
@@ -16,10 +17,12 @@ func counter(x int) {
 	}
 }
 
-func main () {
+func main() {
 	// Your code goes here
-	
+	go counter(3)
+	go counter(2)
 
 	// this sleep is in order to not exit the program sooner than the routine lifetime :)
 	time.Sleep(5 * time.Second)
 }
+

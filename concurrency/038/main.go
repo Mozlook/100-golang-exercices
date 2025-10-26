@@ -8,7 +8,14 @@ package main
 
 import "fmt"
 
-func main () {
-	var c chan string = make(chan string, 1)
-	
+func send(c chan<- string) {
+	c <- "test"
 }
+
+func main() {
+	var c chan string = make(chan string, 1)
+	go send(c)
+	msg := <-c
+	fmt.Print(msg)
+}
+

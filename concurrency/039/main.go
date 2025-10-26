@@ -15,22 +15,34 @@
 
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+)
 
-func name(c chan string, name string){
-	
+func name(c chan string, name string) {
+	for {
+		c <- name
+	}
 }
 
-func main () {
+func main() {
 	var c1 chan string = make(chan string)
 	var c2 chan string = make(chan string)
 	var c3 chan string = make(chan string)
+	go name(c1, "Agata")
+	go name(c2, "Kasia")
+	go name(c3, "Przemek")
 
 	for {
 		select {
-		
+		case msg := <-c1:
+			fmt.Println(msg)
+		case msg := <-c2:
+			fmt.Println(msg)
+		case msg := <-c3:
+			fmt.Println(msg)
 		}
 	}
 	fmt.Println("Goroutines finished.") // You shouldn't see this message as the goroutines run forever!
 }
+
