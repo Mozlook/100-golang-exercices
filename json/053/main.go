@@ -21,7 +21,7 @@ func main() {
                 },
                 "animals": "none"
               }`
-	var result map[string]interface{}
+	var result map[string]any
 
 	json.Unmarshal([]byte(birdJson), &result)
 	birds := result["birds"]
