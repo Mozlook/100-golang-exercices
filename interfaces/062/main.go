@@ -5,25 +5,24 @@
 
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "context"
 
 // This first exercise we are going to create an interface, no execution!
 // Creating our first interface:
 // declare an interface called "Geometry"
+type Geometry interface {
+	area() float64
+}
 
-	// create a function signature area(), it's return type will be float64
-	
-
+// create a function signature area(), it's return type will be float64
 
 // A rectangle struct
 type rect struct {
-    width, height float64
+	width, height float64
 }
 
 func main() {
 	ctx := context.Background()
 	doSomething(ctx)
 }
+
