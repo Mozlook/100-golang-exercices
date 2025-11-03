@@ -8,17 +8,28 @@
 package main
 
 import (
-    "fmt"
-    "encoding/json"
+	"encoding/json"
+	"fmt"
 )
 
 type user struct {
-  
+	Username string `json:"username"`
+	Password string `json:"password"`
 }
 
 func main() {
-  
+	people := []user{
+		{Username: "John", Password: "qwerty"},
+		{Username: "Anna", Password: "qwerty"},
+		{Username: "Mike", Password: "qwerty"},
+	}
 
-  // print encoded json data
-  fmt.Println(string(out))
+	out, err := json.Marshal(people)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// print encoded json data
+	fmt.Println(string(out))
 }
+

@@ -10,16 +10,20 @@
 
 package main
 
-import "net/http"
-import "fmt"
-import "html"
-import "log"
+import (
+	"fmt"
+	"html"
+	"log"
+	"net/http"
+)
 
 func main() {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		path := r.URL.Path
+		response := fmt.Sprintf("Hello, %s", html.EscapeString(path))
+		fmt.Fprintf(w, response)
+	})
 
-  http.HandleFunc(/**/ , func(w http.ResponseWriter, r *http.Request) {
-	  
-  })
-
-  log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
+
